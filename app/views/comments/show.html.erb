@@ -1,0 +1,7 @@
+<%# <%= link_to "削除する", prototype_comment_path(prototype.id), method: :delete, class: :prototype__btn %>  
+<%= @comment.text %>
+<div class="prototype__manage">
+このコメントを本当に消去すますか？
+  <%= link_to "ホーム画面に戻る",  root_path, class: :prototype__btn %>
+  <%= link_to "削除する", prototype_path(@comment.id), method: :delete, class: :prototype__btn %>
+</div>

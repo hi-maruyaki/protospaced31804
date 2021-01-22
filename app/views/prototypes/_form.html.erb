@@ -1,24 +1,24 @@
-<%= form_with local: true do |f|%>
+<%= form_with model: @prototype, local: true do |f|%>
   <div class="field">
-    <%= f.label :hoge, "プロトタイプの名称" %><br />
-    <%= f.text_field :hoge %>
+    <%= f.label :title, "プロトタイプの名称" %><br />
+    <%= f.text_area :title, class: :form__text %>
+  </div> 
+
+  <div class="field">
+    <%= f.label :catch_copy, "キャッチコピー" %><br />
+    <%= f.text_area :catch_copy, class: :form__text %>
   </div>
 
   <div class="field">
-    <%= f.label :hoge, "キャッチコピー" %><br />
-    <%= f.text_area :hoge, class: :form__text %>
+    <%= f.label :concept, "コンセプト" %><br />
+    <%= f.text_area :concept, class: :form__text %>
   </div>
 
   <div class="field">
-    <%= f.label :hoge, "コンセプト" %><br />
-    <%= f.text_area :hoge, class: :form__text %>
+    <%= f.label :image, "プロトタイプの画像" %><br />
+    <%= f.file_field :image %>
   </div>
-
-  <div class="field">
-    <%= f.label :hoge, "プロトタイプの画像" %><br />
-    <%= f.file_field :hoge %>
-  </div>
-
+z
   <div class="actions">
     <%= f.submit "保存する", class: :form__btn  %>
   </div>

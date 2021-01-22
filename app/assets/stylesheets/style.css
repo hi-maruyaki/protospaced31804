@@ -42,6 +42,39 @@ a {
   padding: 20px 0;
 
 }
+
+
+.navtex__btn {
+  position: relative;
+  padding: 8px 15px;
+  margin-left: 40px;
+  background: #def3ff;
+  border-radius: 20px;
+}
+
+.navtex__btn:before {
+  font-family: "Font Awesome 5 Free";
+  content: "\f111";
+  font-weight: 900;
+  position: absolute;
+  font-size: 15px;
+  left: -40px;
+  bottom: 0;
+  color: #def3ff;
+}
+
+.navtex__btn:after {
+  font-family: "Font Awesome 5 Free";
+  content: "\f111";
+  font-weight: 900;
+  position: absolute;
+  font-size: 23px;
+  left: -23px;
+  bottom: 0;
+  color: #def3ff;
+}
+
+
 .inner {
   width: 1024px;
   margin: 0 auto;
@@ -125,7 +158,19 @@ a {
 }
 .greeting__link{
   text-decoration: underline;
+
+
 }
+
+.greeting__lk  {
+  display: flex;
+  background: #b0dcfa; /*背景色*/
+  padding: 0.0em;/*文字周りの余白*/
+  color: white;/*文字を白に*/
+  border-radius: 0.0em;/*角の丸み*/
+}
+
+
 .page-heading {
   font-size: 30px;
   margin-bottom: 28px;
