@@ -1,4 +1,5 @@
 <main class="main">
+<%= link_to ",", prototype_path(@prototype.id), method: :delete, class: :prototype__btn %>
   <div class="inner">
     <div class="prototype__wrapper">
       <p class="prototype__hedding">
@@ -13,7 +14,7 @@
             <%= link_to "編集する",  edit_prototype_path(@prototype.id), class: :prototype__btn %>
             <%= link_to "削除する", prototype_path(@prototype.id), method: :delete, class: :prototype__btn %>
           </div>
-       <% end %> 
+       <% end  %>
       <%# // プロトタイプの投稿者とログインしているユーザーが同じであれば上記を表示する %>
       <div class="prototype__image">
         <%= image_tag @prototype.image %>
