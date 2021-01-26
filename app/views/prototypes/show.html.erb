@@ -48,6 +48,7 @@
                         </div>
                       <% end %> 
 
+                  <% end %>
                           <% @comments.each do |m| %>
                                 <hr>
                               <div class="comments_list" >
@@ -56,7 +57,7 @@
                                 <%= m.text %>
                                 
                                 
-                                    <% if current_user.id == m.user.id %>
+                                    <% if user_signed_in? && current_user.id == m.user.id %>
                                         <%= link_to "このコメントはあなたが投稿しました、クリックしたら削除できます", prototype_comment_path(@prototype.id, m.id), method: :delete,  class: :greeting__lk %>
                                          
                                     <% end %> 
@@ -64,7 +65,7 @@
                               <hr>
                           <% end %>
 
-                  <% end %>
+                  <%# <% end %> 
       </div>
     </div>
   </div>

@@ -1,16 +1,24 @@
-<div class="main">
-  <div class="inner">
-    <div class="form__wrapper">
-      <h2 class="page-heading">プロトタイプ編集</h2> <div class="card">現在の写真
-            
-  <%= link_to image_tag(@prototype.image, class: :card__img ) %>
-      <%# 部分テンプレートでフォームを表示する %>
-         <div class="contents row" %>
-            <%= render partial: "form", locals: { prototype: @prototype } %>
-           
-  
-          </div>
-    </div>
 
+<% if user_signed_in? && current_user.id == @prototype.user_id %>
+
+  <div class="main">
+    <div class="inner">
+      <div class="form__wrapper">
+        <h2 class="page-heading">プロトタイプ編集</h2> <div class="card">現在の写真
+              
+    <%= link_to image_tag(@prototype.image, class: :card__img ) %>
+        <%# 部分テンプレートでフォームを表示する %>
+          <div class="contents row" %>
+              <%= render partial: "form", locals: { prototype: @prototype } %>
+            
+    
+            </div>
+      </div>
+
+    </div>
   </div>
-</div>
+
+<% end %>
+<% if user_signed_in? && current_user.id != @prototype.user_id%>
+  
+<% end %>

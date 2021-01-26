@@ -1,1 +1,62 @@
-<%= link_to "ホーム画面", root_path, class: :nav__btn %>
+<div class="wrcccapper ">
+    <header class="header">
+      <div class="inner">
+        <div class="nav">
+          <div class="nav__left">
+            <%= link_to image_tag("logo.png", class: :logo), root_path %>
+          </div>
+          <% if user_signed_in? %>
+
+            <%# ログインしているときは以下を表示するようにしましょう %>
+              <div class="nav__right">
+                 <%= link_to "ログアウト", destroy_user_session_path,  method: :delete, class: :nav__logout %>
+                 <%= link_to "New Proto", new_prototype_path, class: :nav__btn %>
+              </div>
+            <%# // ログインしているときは上記を表示するようにしましょう %>
+          <% else %>
+
+              <div class="nav__right">
+                <%= link_to "ログイン", new_user_session_path, class: :nav__btn %>
+                <%= link_to "新規登録", new_user_registration_path, class: :nav__btn %>
+              </div>
+
+          <% end %>
+          
+        </div>
+      </div>
+    </header>
+  <div class="prototype__wrapper">
+      <p class="prototype__hedding">
+        <%= @prototype.title %>
+      </p>
+            <div class="prototype__image">
+              <%= image_tag @prototype.image %>
+            </div>
+      <div class="prototype__body">
+        <div class="prototype__detail">
+          <p class="detail__title">キャッチコピー</p>
+          <p class="detail__message">
+            <%= @prototype.catch_copy %>
+          </p>
+        </div>
+        <div class="prototype__detail">
+          <p class="detail__title">コンセプト</p>
+          <p class="detail__message">
+            <%= @prototype.concept %>
+        </div>
+      </div>
+      <div class="prototype__comments">
+
+
+
+
+
+      <div class="prototype__comments">
+      <h1>編集完了しました</h1>
+      <%= link_to "ホーム画面にもどる", root_path, class: :nav__btn %>
+      <%= link_to "もう一度この投稿の詳細ページにもどる", prototype_path(@prototype.id), class: :nav__btn %>
+   </div>
+  </div>
+</div>
+
+</div>
