@@ -1,11 +1,14 @@
 <div class="main">
   <div class="inner">
+<% if user_signed_in? && current_user.id == current_user.id %>
     <div class="form__wrapper">
       <h2 class="page-heading">新規プロトタイプ投稿</h2>
           <div class="contents row">
-
             <%= render partial: "form", locals: { prototype: @prototype } %>
-
-              </div>
           </div>
+     </div>
+<% end %> 
+  </div>           
+</div>
+
 
