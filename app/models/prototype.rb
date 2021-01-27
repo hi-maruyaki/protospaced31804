@@ -3,7 +3,7 @@ class Prototype < ApplicationRecord
   has_many  :comments
   has_one_attached :image
 
-  validates :content, presence: true, unless: :was_attached?
+  # validates :content, presence: true, unless: :was_attached?
 
   validates :title, presence: true
   validates :catch_copy, presence: true

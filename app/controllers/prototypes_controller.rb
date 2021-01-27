@@ -4,6 +4,7 @@ class PrototypesController < ApplicationController
     @prototypes = Prototype.includes(:user)
   end
 
+  before_action :authenticate_user!, only: :new
   def new
     @prototype = Prototype.new
   end
@@ -16,6 +17,7 @@ class PrototypesController < ApplicationController
       render :new
     end
   end
+  
 
   def show
     @prototype = Prototype.find(params[:id])
@@ -31,8 +33,6 @@ class PrototypesController < ApplicationController
       @prototype = Prototype.find(params[:id])
     else
       redirect_to prototype_path(@prototype.id)
-   
-     
     end
   end
 
@@ -40,7 +40,7 @@ class PrototypesController < ApplicationController
     @prototype = Prototype.find(params[:id])
     @prototype.update(prototype_params)
       if @prototype.save
-        # redirect_to prototype_path(@prototype.id)
+        redirect_to prototype_path(@prototype.id)
       else
         render :edit
       end
