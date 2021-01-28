@@ -27,12 +27,13 @@ class PrototypesController < ApplicationController
 
 
 
+  before_action :authenticate_user!, only: :edit
   def edit  
     @prototype = Prototype.find(params[:id])
     if user_signed_in? && current_user.id == @prototype.user_id
       @prototype = Prototype.find(params[:id])
     else
-      redirect_to prototype_path(@prototype.id)
+      redirect_to root_path(@prototype.id)
     end
   end
 
