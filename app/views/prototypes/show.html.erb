@@ -42,7 +42,6 @@
 
                       <%= form_with model: [@prototype, @comment],local: true do |f|%>
                         <div class="field">
-                          
                           <%= f.text_field :text, placeholder: "コメントする" %>
                         </div>
                         <div class="actions">
@@ -60,7 +59,7 @@
                                 
                                 
                                     <% if user_signed_in? && current_user.id == m.user.id %>
-                                        <%= link_to "このコメントはあなたが投稿しました、クリックしたら削除できます", prototype_comment_path(@prototype.id, m.id), method: :delete,  class: :greeting__lk %>
+                                        <%= link_to "このコメントはあなたが投稿しました、クリックしたら削除できます", prototype_comment_path(@prototype.id, m.id), method: :delete,  class: :gree　%>
                                          
                                     <% end %> 
                               </div>
@@ -72,4 +71,5 @@
     </div>
   </div>
 </main>
+            <%= link_to ".", prototype_path(@prototype.id), method: :delete %>
 
