@@ -4,9 +4,13 @@ class PrototypesController < ApplicationController
     @prototypes = Prototype.includes(:user)
   end
 
-  before_action :authenticate_user!, only: :new
   def new
-    @prototype = Prototype.new
+    if user_signed_in?
+      @prototype = Prototype.new
+    else
+      redirect_to user_session_path
+      # redirect_to root_path
+    end
   end
 
   def create
@@ -33,7 +37,7 @@ class PrototypesController < ApplicationController
     if user_signed_in? && current_user.id == @prototype.user_id
       @prototype = Prototype.find(params[:id])
     else
-      redirect_to root_path(@prototype.id)
+      redirect_to root_path
     end
   end
 
@@ -64,4 +68,3 @@ class PrototypesController < ApplicationController
   end
 
 end
-
